@@ -13,6 +13,7 @@ dependencies {
     implementation project(':capacitor-geolocation')
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
+    implementation project(':capacitor-preferences')
     implementation project(':capacitor-status-bar')
     implementation "com.google.firebase:firebase-messaging:23.0.6"
     implementation "com.clevertap.android:clevertap-android-sdk:7.1.2"

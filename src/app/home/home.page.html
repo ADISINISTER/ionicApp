@@ -1,4 +1,43 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-toolbar>
+    <ion-title>CleverTap Integration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+    
+
+    <ion-item>
+      <ion-label position="floating">Identity</ion-label>
+      <ion-input formControlName="identity" type="text"></ion-input>
+    </ion-item>
+    
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    
+
+    <ion-button expand="full" type="submit" [disabled]="userForm.invalid">Submit</ion-button>
+  </form>
+
+  <ion-button expand="full" (click)="recordEvent()"> Record Event</ion-button>
+  <ion-button expand="full" (click)="onUserLogin()"> On User Login</ion-button>
+  <ion-button expand="full" (click)="pushProfile()"> Push Profile</ion-button>
+  <ion-button expand="full" (click)="inApp()"> In-App</ion-button>
+ 
+
+</ion-content>
+
+<!--OG CODE-->
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Blank
@@ -22,3 +61,30 @@
   <ion-button expand="full" (click)="onClick()">Click Me</ion-button>
   <p>{{ message }}</p>
 </ion-content>
+
+
+<ion-content class="ion-padding">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Name Input -->
+    <!-- <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item> -->
+
+    <!-- Identity Input -->
+    <!-- <ion-item>
+      <ion-label position="floating">Identity</ion-label>
+      <ion-input formControlName="identity" type="text"></ion-input>
+    </ion-item> -->
+
+    <!-- Email Input -->
+    <!-- <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item> -->
+
+    <!-- Submit Button -->
+    <!-- <ion-button expand="full" type="submit" [disabled]="userForm.invalid">Submit</ion-button>
+  </form>
+</ion-content> --> -->
