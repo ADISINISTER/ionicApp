@@ -105,12 +105,6 @@ export class HomePage {
   }
 }
 
-//   // ✅ Open CleverTap Inbox
-//   openInbox() {
-//     this.cleverTap.showInbox();
-//     console.log("Inbox opened");
-//   }
-// }
 
 //OG CODE
 // import { Component } from '@angular/core';
