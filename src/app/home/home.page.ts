@@ -25,6 +25,8 @@ export class HomePage {
     CleverTap.notifyDeviceReady();
     CleverTap.enableDeviceNetworkInfoReporting(true);
     CleverTap.setDebugLevel(3);
+    CleverTap.initializeInbox();
+    // CleverTap.registerPush();
 
     // Request Location Permission
     Geolocation.requestPermissions()
@@ -103,9 +105,48 @@ export class HomePage {
     CleverTap.recordEventWithName("InApp");
     console.log("InApp event recorded!");
   }
+  // Show App Inbox
+showAppInbox() {
+  const styleConfig = {
+    navBarColor: '#6200EE',
+    navBarTitleColor: '#FFFFFF',
+    inboxBackgroundColor: '#F9F9F9',
+    firstTabTitle: 'Messages',
+    tabs: ['Messages', 'Offers']
+  };
+
+  CleverTap.showInbox(styleConfig);
+  console.log("App Inbox launched");
+}
 }
 
-//   // ✅ Open CleverTap Inbox
+document.addEventListener('onCleverTapInboxDidInitialize', () => {
+  console.log("📩 CleverTap Inbox Initialized");
+});
+
+document.addEventListener('onCleverTapInboxMessagesDidUpdate', () => {
+  console.log("📩 CleverTap Inbox Messages Updated");
+});
+
+
+
+// showAppInbox() {
+//   CleverTap.showInbox({
+//     tabs: ['Offers', 'Promotions'], // Tab names
+//     navBarTitle: 'My App Inbox',
+//     navBarTitleColor: '#FFFFFF', // White title
+//     navBarColor: '#000000', // Black navbar
+//     inboxBackgroundColor: '#F0F0F0', // Light gray background
+//     backButtonColor: '#FF0000', // Red back button
+//     unselectedTabColor: '#808080', // Gray tabs
+//     selectedTabColor: '#0000FF', // Blue selected tab
+//     selectedTabIndicatorColor: '#FF0000', // Red underline
+//     noMessageText: 'No new messages',
+//     noMessageTextColor: '#FF0000',
+//   });
+//   console.log("Inbox opened");
+// }
+
 //   openInbox() {
 //     this.cleverTap.showInbox();
 //     console.log("Inbox opened");
